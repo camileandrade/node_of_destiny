@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { Inventario } from './Inventario.js';
-import { formatar1, formatar2 } from '../../utils/formatacao.js'
+import { formatar1 } from '../../utils/formatacao.js'
 
 export class Personagem {
     constructor(nome, classe) {

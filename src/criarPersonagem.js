@@ -55,8 +55,9 @@ export async function criarPersonagem() {
 
     console.clear();
 
-    console.log(chalk.green(`\nBem-vindo, ${jogador.nome}.`));
-    console.log(chalk.green('Sua aventura começa agora, prepare-se para desafios épicos e conquistas lendárias!'));
-
+    console.log(chalk.green('🎉 Personagem criado com sucesso!!🎉'));
+    console.log(chalk.yellow(`🌟 Bem-vindo ${jogador.nome}, sua aventura começa agora!🌟`));
+    
+    return jogador;
 }
 

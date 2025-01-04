@@ -1,3 +1,6 @@
+import chalk from 'chalk';
+import { formatar1 } from '../../utils/formatacao.js'
+
 export class Inventario {
     constructor() {
         this.itens = [];
@@ -16,10 +19,10 @@ export class Inventario {
         }
     }
 
-    mostrarInventário() {
-        console.log('=== Inventário ===');
+    mostrarInventario() {
+        console.log(chalk.bgRedBright.black.italic((`\n${formatar1('Inventário')}`)));
         if (this.itens.length === 0) {
-            console.log('Inventário vazio.');
+            console.log(chalk.gray.italic((`${formatar1('Inventário vazio')}`)));
         } else {
             this.itens.forEach((item, index) => {
                 console.log(`${index + 1}. ${item.nome} - ${item.descricao}`);
