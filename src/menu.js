@@ -1,6 +1,8 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { iniciarJogo } from './fluxo.js';
+import { pressioneEnter } from '../utils/mensagens.js';
+import { formatar1 } from '../utils/formatacao.js'
 
 export function menuInicial() {
     inquirer.prompt([
@@ -20,20 +22,22 @@ export function menuInicial() {
     });
 }
 
-export async function menuAcoes(jogador) {
+export async function menuPrincipal(jogador) {
     let jogoContinua = true;
 
     while (jogoContinua) {
         console.clear();
 
-        const { acaoSelecionada } = await inquirer.prompt({
-            type: 'list',
-            name: 'acaoSelecionada',
-            message: 'Escolha uma ação:',
-            choices: ['📜 Perfil', '🎒 Inventário', '🗺️ Mapa', '🚪 Sair do jogo'],
-        });
+        console.log(chalk.bgBlueBright.black.italic(`${formatar1('Menu',30)}`));
 
-        switch (acaoSelecionada) {
+        const { opcaoEscolhida } = await inquirer.prompt({
+            type: 'list',
+            name: 'opcaoEscolhida',
+            message: chalk.gray.italic(`${formatar1('Escolha uma opção:',29)}`),
+            choices: ['📜 Perfil', '🎒 Inventário', '🗺️ Mapa', '🚪 Sair do jogo'],
+        }); 
+
+        switch (opcaoEscolhida) {
             case '📜 Perfil':
                 console.clear();
                 jogador.mostrarPerfil(); 
@@ -57,11 +61,7 @@ export async function menuAcoes(jogador) {
         }
 
         if (jogoContinua) {
-            await inquirer.prompt({
-                type: 'input',
-                name: 'continuar',
-                message: chalk.gray('\nPressione Enter para continuar...'),
-            });
+            await pressioneEnter();
         }
     }
 }

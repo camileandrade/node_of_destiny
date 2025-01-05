@@ -2,6 +2,7 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { Personagem } from './class/Personagem.js';
 import { Guerreiro, Mago, Arqueiro } from './class/Classe.js';
+import { pressioneEnter } from '../utils/mensagens.js';
 
 export async function criarPersonagem() {
     console.clear();
@@ -45,7 +46,7 @@ export async function criarPersonagem() {
             type: 'confirm',
             name: 'confirmarClasse',
             message: '\nDeseja confirmar essa escolha?',
-            default: false,
+            default: true,
         });
 
         confirmar = confirmarClasse;
@@ -55,8 +56,10 @@ export async function criarPersonagem() {
 
     console.clear();
 
-    console.log(chalk.green('🎉 Personagem criado com sucesso!!🎉'));
-    console.log(chalk.yellow(`🌟 Bem-vindo ${jogador.nome}, sua aventura começa agora!🌟`));
+    console.log(chalk.green('🎉 Personagem criado com sucesso!!'));
+    console.log(chalk.yellow(`🌟 Bem-vindo ${jogador.nome}, sua aventura começa agora!`));
+
+    await pressioneEnter();
     
     return jogador;
 }

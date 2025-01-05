@@ -73,10 +73,10 @@ export class Personagem {
             console.log(`🏹 Classe: ${this.classe}`);
         }
 
-        console.log(`❤️  Vida: ${this.vida}`);
+        console.log(`❤️ Vida: ${this.vida}`);
         console.log(`✨ Mana: ${this.mana}`);
-        console.log(`⚔️  Combate: ${this.combate}`);
-        console.log(`🪙  Moedas: ${this.moedas}`);
+        console.log(`⚔️ Combate: ${this.combate}`);
+        console.log(`🪙 Moedas: ${this.moedas}`);
 
         console.log(chalk.bgYellowBright.black.italic((`\n${formatar1('Habilidades')}`)));
         this.habilidades.forEach((habilidade) => {

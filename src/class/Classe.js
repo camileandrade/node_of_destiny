@@ -17,9 +17,9 @@ class Classe {
         resultado += chalk.whiteBright(this.descricao) + '\n';
     
         resultado += chalk.yellow(`\n${formatar2('Dados')}`) + '\n';
-        resultado += `❤️  Vida: ${this.vida}\n`;
+        resultado += `❤️ Vida: ${this.vida}\n`;
         resultado += `✨ Mana: ${this.mana}\n`;
-        resultado += `⚔️  Combate: ${this.combate}\n`;
+        resultado += `⚔️ Combate: ${this.combate}\n`;
     
         resultado += chalk.yellow.italic(`\n${formatar2('Habilidades')}`) + '\n';
         this.habilidades.forEach((habilidade) => {
@@ -43,7 +43,7 @@ export const Mago = new Classe(
     'Mago',
     'Um manipulador de energias místicas,\nespecializado em lançar feitiços \ndevastadores, mas com pouca resistência\nfísica.',
     80, 150, 90, [
-    { nome: '⚡️ Descarga Elétrica', dano: 30, custoMana: 15, },
+    { nome: '⚡️Descarga Elétrica', dano: 30, custoMana: 15, },
     { nome: '🔥 Bola de Fogo', dano: 60, custoMana: 35, },
 ]);
 
@@ -51,7 +51,7 @@ export const Arqueiro = new Classe(
     'Arqueiro',
     'Um combatente ágil, mestre em ataques\nà distância, ideal para eliminar \ninimigos sem se expor ao perigo.',
     100, 40, 50, [
-    { nome: '⚡️ Flecha Veloz', dano: 20, custoMana: 0, },
+    { nome: '⚡️Flecha Veloz', dano: 20, custoMana: 0, },
     { nome: '💣 Flecha Explosiva', dano: 30, custoMana: 10, },
 ]);
 
