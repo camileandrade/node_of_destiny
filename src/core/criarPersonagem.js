@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
-import { Personagem } from './class/Personagem.js';
-import { Guerreiro, Mago, Arqueiro } from './class/Classe.js';
+import { Personagem } from '../class/Personagem.js';
+import { Guerreiro, Mago, Arqueiro } from '../data/classes.js';
 import { pressioneEnter } from '../utils/mensagens.js';
 
 export async function criarPersonagem() {
@@ -63,4 +63,3 @@ export async function criarPersonagem() {
     
     return jogador;
 }
-

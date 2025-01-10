@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { formatar1 } from '../../utils/formatacao.js'
+import { formatar1 } from '../utils/formatacao.js'
 
 export class Inventario {
     constructor() {

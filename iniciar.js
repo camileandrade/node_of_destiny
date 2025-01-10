@@ -1,6 +1,6 @@
 import figlet from 'figlet';
 import chalkAnimation from 'chalk-animation';
-import { menuInicial } from './src/menu.js';
+import { menuInicial } from './src/core/menus/inicial.js';
 
 console.clear();
 

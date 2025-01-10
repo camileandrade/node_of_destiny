@@ -1,16 +1,16 @@
 import chalk from 'chalk';
 import { Inventario } from './Inventario.js';
-import { formatar1 } from '../../utils/formatacao.js'
+import { formatar1 } from '../utils/formatacao.js'
 
 export class Personagem {
     constructor(nome, classe) {
-        const { vida, mana, combate, habilidades } = classe;
         this.nome = nome;
         this.classe = classe.nome;
-        this.vida = vida;
-        this.mana = mana;
-        this.combate = combate;
-        this.habilidades = habilidades;
+        this.simbolo = classe.simbolo;
+        this.vida = classe.vida;
+        this.mana = classe.mana;
+        this.combate = classe.combate;
+        this.habilidades = classe.habilidades;
         this.moedas = 10;
         this.inventario = new Inventario();
     }
@@ -64,15 +64,7 @@ export class Personagem {
     mostrarPerfil() {
         console.log(chalk.bgYellowBright.black.italic((`\n${formatar1('Dados')}`)));
         console.log(`👤 Nome: ${this.nome}`);
-
-        if (this.classe == 'Guerreiro') {
-            console.log(`🗡  Classe: ${this.classe}`);
-        } else if (this.classe == 'Mago') {
-            console.log(`🔮 Classe: ${this.classe}`);
-        } else {
-            console.log(`🏹 Classe: ${this.classe}`);
-        }
-
+        console.log(`${this.simbolo} Classe: ${this.classe}`);
         console.log(`❤️ Vida: ${this.vida}`);
         console.log(`✨ Mana: ${this.mana}`);
         console.log(`⚔️ Combate: ${this.combate}`);

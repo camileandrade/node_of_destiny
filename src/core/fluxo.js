@@ -1,5 +1,5 @@
 import { criarPersonagem } from './criarPersonagem.js';
-import { menuPrincipal } from './menu.js';
+import { menuPrincipal } from './menus/principal.js';
 
 export async function iniciarJogo() {
     const jogador = await criarPersonagem(); 
