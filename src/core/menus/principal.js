@@ -1,39 +1,46 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import { formatar1 } from '../../utils/formatacao.js'
-import { todosLocais } from '../../data/locais.js';
+import {pressioneEnter } from '../../utils/mensagens.js';
 import { abrirMapa } from '../mapa/locais.js';
 
 export async function menuPrincipal(jogador) {
-    console.clear();
+    let continuarNoMenu = true;
 
-    console.log(chalk.bgBlueBright.black.italic(`${formatar1('Menu', 30)}`));
+    while (continuarNoMenu) {
+        console.clear();
 
-    const { opcaoEscolhida } = await inquirer.prompt({
-        type: 'list',
-        name: 'opcaoEscolhida',
-        message: chalk.gray.italic(`${formatar1('Escolha uma opção:', 29)}`),
-        choices: ['🌎 Mapa', '🎒 Inventário', '📜 Perfil', '🚪 Sair do jogo'],
-    });
+        console.log(chalk.bgBlueBright.black.italic(`${formatar1('Menu', 30)}`));
 
-    switch (opcaoEscolhida) {
-        case '🌎 Mapa':
-            await abrirMapa();
-            break;
+        const { opcaoEscolhida } = await inquirer.prompt({
+            type: 'list',
+            name: 'opcaoEscolhida',
+            message: chalk.gray.italic(`${formatar1('Escolha uma opção:', 29)}`),
+            choices: ['🌎 Mapa', '🎒 Inventário', '📜 Perfil', '🚪 Sair do jogo'],
+        });
 
-        case '🎒 Inventário':
-            console.clear();
-            jogador.inventario.mostrarInventario();
-            break;
+        switch (opcaoEscolhida) {
+            case '🌎 Mapa':
+                await abrirMapa(jogador); 
+                break;
 
-        case '📜 Perfil':
-            console.clear();
-            jogador.mostrarPerfil();
-            break;
+            case '🎒 Inventário':
+                console.clear();
+                jogador.inventario.mostrarInventario();
+                await pressioneEnter();
+                break;
 
-        case '🚪 Sair do jogo':
-            console.clear();
-            console.log(chalk.red('👋 Obrigado por jogar! Até a próxima!'));
-            break;
+            case '📜 Perfil':
+                console.clear();
+                jogador.mostrarPerfil();
+                await pressioneEnter(); 
+                break;
+
+            case '🚪 Sair do jogo':
+                console.clear();
+                console.log(chalk.red('👋 Obrigado por jogar! Até a próxima!'));
+                continuarNoMenu = false; 
+                break;
+        }
     }
 }
