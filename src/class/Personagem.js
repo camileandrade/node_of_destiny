@@ -62,7 +62,7 @@ export class Personagem {
     }
 
     mostrarPerfil() {
-        console.log(chalk.bgYellowBright.black.italic((`\n${formatar1('Dados')}`)));
+        console.log(chalk.bgYellow.black.italic((`\n${formatar1('Dados')}`)));
         console.log(`👤 Nome: ${this.nome}`);
         console.log(`${this.simbolo} Classe: ${this.classe}`);
         console.log(`❤️ Vida: ${this.vida}`);
@@ -70,7 +70,7 @@ export class Personagem {
         console.log(`⚔️ Combate: ${this.combate}`);
         console.log(`🪙 Moedas: ${this.moedas}`);
 
-        console.log(chalk.bgYellowBright.black.italic((`\n${formatar1('Habilidades')}`)));
+        console.log(chalk.bgYellow.black.italic((`\n${formatar1('Habilidades')}`)));
         this.habilidades.forEach((habilidade) => {
             console.log(`${habilidade.nome}\n     Dano: ${habilidade.dano} ${habilidade.custoMana > 0 ? `\n     Custo de Mana: ${habilidade.custoMana}` : ''}`);
         });
