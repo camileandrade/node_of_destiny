@@ -46,9 +46,18 @@ export const Cidade = new Local(
     'item'
 );
 
+export const Borda = new Local (
+    'A Borda Escarlate',
+    'Há muito tempo, entre as margens de Everdeep e os Campos Além,\numa guerra feroz manchou a terra com sangue.\n\nMarcada por incontáveis mortes, a floresta em sua natureza\nviva, acolheu os últimos suspiros daqueles que ali pereceram.\n\nE tingindo as árvores de escarlate, este lugar transformou-se\nem um testemunho silencioso, uma beleza trágica que carrega\na dor e os sacrifícios de um passado sombrio.\n\n',
+    'natureza',
+    [],
+    [],
+    'item',
+);
+
 export const Vale = new Local (
     'Vale do Ouro Verde',
-    'Escondido entre colinas suaves e rodeado pela floresta densa,\né um lugar onde a natureza encontra sua forma mais vibrante.\n\nSob a vigília constante de um sol eterno, sua vegetação adquiriu\num brilho dourado único, como se os próprios raios\nde luz os abençoasse.\n\nA intensa luminosidade que banha o vale transforma cada planta\nem fragmentos de ouro vivo, guardando segredos que\napenas a luz ousa revelar.\n\n',
+    'Oculto abaixo de um despinhadeiro e rodeado pela floresta densa,\né um lugar onde a natureza encontra sua forma mais vibrante.\n\nSob a vigília constante de um sol eterno, sua vegetação adquiriu\num brilho dourado único, como se os próprios raios\nde luz os abençoasse.\n\nA intensa luminosidade que banha o vale transforma cada planta\nem fragmentos de ouro vivo, guardando segredos que\napenas a luz ousa revelar.\n\n',
     'natureza',
     [],
     [],
@@ -57,7 +66,7 @@ export const Vale = new Local (
 
 export const Pantano = new Local (
     'O Pântano Esquecido',
-    'Envolto por uma densa névoa e cercado por árvores gigantescas\ncom raízes que se entrelaçam sob as águas escuras,\neste lugar pulsa uma energia antiga.\n\nO que agora é uma paisagem sombria e carregada de mistério\nfoi, outrora, um refúgio de luz e harmonia.\n\nAqueles que um dia chamavam o local de lar desapareceram,\ne as memórias dessa era dourada se tornaram apenas\num murmúrio no vento, apagadas das mentes dos vivos.\n\n',
+    'Envolto por uma densa névoa e cercado por árvores gigantescas\ncom raízes que se entrelaçam sob as águas escuras,\neste lugar pulsa uma energia antiga.\n\nO que agora é uma paisagem sombria e carregada de mistério\nfoi, outrora, um refúgio de luz e harmonia.\n\nAqueles que um dia chamavam o local de lar desapareceram,\ne as memórias dessa era dourada se tornaram apenas\nmurmúrios ao vento, apagadas das mentes dos vivos.\n\n',
     'natureza',
     [],
     [],
@@ -75,9 +84,9 @@ export const CabanaDaFeiticeira = new Local (
 
 export const Floresta = new Local(
     'Everdeep, a Floresta Encantada',
-    'No coração das Terras Centrais, estende-se Everdeep, um vasto\nlabirinto natural onde as árvores ancestrais ergueram-se\ntão próximas que seus galhos entrelaçados formam um\nteto verde-escuro.\n\nA luz do sol penetra timidamente, criando padrões dançantes\nno chão coberto de folhas.\n\n',
+    'No coração das Terras Centrais, existe vasto labirinto natural\nonde as árvores ergueram-se tão próximas que seus galhos\nentrelaçados formam um teto verde-escuro.\n\nA floresta não é apenas um lar para a natureza, é um ser\nconsciente.\n\nSuas intenções se manifestam nas trilhas que se fecham e abrem\ncomo um labirinto em constante mudança.\n\nÉ um lugar que vê, sente e decide.\n\n',
     'natureza',
-    [Vale, Pantano, CabanaDaFeiticeira],
+    [Borda, Vale, Pantano, CabanaDaFeiticeira],
     [],
     'item'
 );
